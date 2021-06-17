@@ -115,4 +115,7 @@ E   ModuleNotFoundError: No module named 'flaskr'
 ```
 
 
- 
+## link
+
+- If you intrested in *Test Coverage*, you could see: [zh] https://www.infoq.cn/article/test-coverage-rate-role.
+  - In my perspective, the test mostly playing a role in checking for useless part of code. Is this part of code necessary really? And how to simplify the code and finding the more useful schema and thinking is crucial.
