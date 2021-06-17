@@ -1,5 +1,7 @@
 # I Love Demos
 
-> Practice makes perfect!
+```
+/* Practice makes perfect! */
+/* Its a set of the demo-projects referring to web tutorials. */
+```
 
-Its a set of the demo-projects referring to web tutorials.
