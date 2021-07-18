@@ -16,63 +16,62 @@ Okey, let's write something to against the memory.
 
 - [ ] the `temlpate` couldn't write the comments, which means that
 I have to write another. That sounds not good enough. And this the
-url for that tutorial :
-- https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/
+url for that tutorial: https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/
 
-    ```html
-    <!doctype html>
-    <title>{% block title %}{% endblock %} - Flaskr</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <nav>
-      <h1>Flaskr</h1>
-      <ul>
-        {% if g.user %}
-          <li><span>{{ g.user['username'] }}</span>
-          <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-        {% else %}
-          <li><a href="{{ url_for('auth.register') }}">Register</a>
-          <li><a href="{{ url_for('auth.login') }}">Log In</a>
-        {% endif %}
-      </ul>
-    </nav>
-    <section class="content">
-      <header>
-        {% block header %}{% endblock %}
-      </header>
-      {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-      {% endfor %}
-      {% block content %}{% endblock %}
-    </section>
+```html
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flaskr</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Flaskr</h1>
+  <ul>
+    {% if g.user %}
+      <li><span>{{ g.user['username'] }}</span>
+      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+    {% else %}
+      <li><a href="{{ url_for('auth.register') }}">Register</a>
+      <li><a href="{{ url_for('auth.login') }}">Log In</a>
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
 
-    <!-- 
-        1. {% block title %} will change the title displayed in the browser’s tab and window title.
-        2. {% block header %} is similar to title but will change the title displayed on the page.
-        3. {% block content %} is where the content of each page goes, such as the login form or a blog post. 
-        
-        the {% block %} tags define blocks that child templates can fill in. All the block tag does is tell the template engine that a child template may override those placeholders in the template. block tags can be inside other blocks such as if, but they will always be executed regardless of if the if block is actually rendered.-->
-    ```
+<!-- 
+    1. {% block title %} will change the title displayed in the browser’s tab and window title.
+    2. {% block header %} is similar to title but will change the title displayed on the page.
+    3. {% block content %} is where the content of each page goes, such as the login form or a blog post. 
+    
+    the {% block %} tags define blocks that child templates can fill in. All the block tag does is tell the template engine that a child template may override those placeholders in the template. block tags can be inside other blocks such as if, but they will always be executed regardless of if the if block is actually rendered.-->
+```
 
-    ```html
-    {% extends 'base.html' %}
-    <!-- {% extends 'base.html' %} tells Jinja that this template should replace the blocks from the base template. All the rendered content must appear inside {% block %} tags that override blocks from the base template. -->
+```html
+{% extends 'base.html' %}
+<!-- {% extends 'base.html' %} tells Jinja that this template should replace the blocks from the base template. All the rendered content must appear inside {% block %} tags that override blocks from the base template. -->
 
-    {% block header %}
-      <h1>{% block title %}Register{% endblock %}</h1>
-    {% endblock %}
-    <!-- A useful pattern used here is to place {% block title %} inside {% block header %}. This will set the title block and then output the value of it into the header block, so that both the window and page share the same title without writing it twice. -->
+{% block header %}
+ <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+<!-- A useful pattern used here is to place {% block title %} inside {% block header %}. This will set the title block and then output the value of it into the header block, so that both the window and page share the same title without writing it twice. -->
 
-    {% block content %}
-      <form method="post">
-        <label for="username">Username</label>
-        <input name="username" id="username" required>
-        <!-- The input tags are using the required attribute here. This tells the browser not to submit the form until those fields are filled in. If the user is using an older browser that doesn’t support that attribute, or if they are using something besides a browser to make requests, you still want to validate the data in the Flask view. It’s important to always fully validate the data on the server, even if the client does some validation as well. -->
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-        <input type="submit" value="Register">
-      </form>
-    {% endblock %}
-    ```
+{% block content %}
+ <form method="post">
+   <label for="username">Username</label>
+   <input name="username" id="username" required>
+   <!-- The input tags are using the required attribute here. This tells the browser not to submit the form until those fields are filled in. If the user is using an older browser that doesn’t support that attribute, or if they are using something besides a browser to make requests, you still want to validate the data in the Flask view. It’s important to always fully validate the data on the server, even if the client does some validation as well. -->
+   <label for="password">Password</label>
+   <input type="password" name="password" id="password" required>
+   <input type="submit" value="Register">
+ </form>
+{% endblock %}
+```
 
 - [X] `pytest` couldn't run when you not package it and install 
 it. just like the issue said:
@@ -87,7 +86,7 @@ it. just like the issue said:
 > review.
 > from: https://github.com/pallets/flask/issues/2908
 
-the scence is following:
+the result is following:
 
 ```shell
 $ pytest
