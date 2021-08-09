@@ -6,7 +6,6 @@ import time
 PATH = os.getcwd()
 g = os.walk(PATH) #os.walk(r'/mnt/c/Users/15517/Pictures/pic')
 
-
 # if you write latter.
 #
 # 1. i am run wsl2, so `C:\Users\15517\Pictures\pic` is not suitting me.
@@ -29,9 +28,6 @@ g = os.walk(PATH) #os.walk(r'/mnt/c/Users/15517/Pictures/pic')
 #         - https://stackoverflow.com/questions/37400974/
 #         unicode-error-unicodeescape-codec-cant-decode-bytes-in-position-2-3-trunca
 
-
-
-
 LIST = []
 
 # walk in list:
@@ -44,7 +40,7 @@ LIST = []
 
 step=0
 
-for root,dirs,files in g:  
+for root,dirs,files in g:
     for file in files:
         LIST.append(os.path.join(root,file)) 
 
@@ -85,6 +81,7 @@ for root,dirs,files in g:
 
 newDir = str(time.strftime('%Y-%m-%d-%H-%M-%S',time.localtime(time.time()))) # new dir
 
+# too fast can not to do well???
 # - time
 #     - %y 两位数的年份表示（00-99）
 #     - %Y 四位数的年份表示（000-9999）
