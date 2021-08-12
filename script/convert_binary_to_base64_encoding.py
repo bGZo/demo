@@ -2,7 +2,7 @@
 import os
 import base64
 
-def Get_Pic_base64(PATH, SaveName='test'):# defult put latter
+def Encode_Pic_base64(PATH, SaveName='test'):# defult put latter
     textchars = bytearray({7,8,9,10,12,13,27} | set(range(0x20, 0x100)) - {0x7f})
     is_binary_string = lambda bytes: bool(bytes.translate(None, textchars))
     if is_binary_string(open(PATH, 'rb').read(1024)) is False:
@@ -22,7 +22,13 @@ def Get_Pic_base64(PATH, SaveName='test'):# defult put latter
     # https://stackoverflow.com/questions/42339876/
     # error-unicodedecodeerror-utf-8-codec-cant-decode-byte-0xff-in-position-0-in
 
-    print(base64.b64encode(f.read()), file=ff)
+    StrFormat = str(base64.b64encode(f.read()),'utf-8') 
+    # rm prefix b'', see in
+    # https://blog.csdn.net/qq_42731401/article/details/105039539
+    # or you will see:
+    # https://stackoverflow.com/questions/58323382/
+    # binascii-error-invaild-base64-encoded-string-number-of-data-characters1957-c
+    print(StrFormat, file=ff)
     # output to file using print with `file`
 
 if __name__ =='__main__':
@@ -42,7 +48,7 @@ if __name__ =='__main__':
             # https://www.geeksforgeeks.org/python-os-path-splitext-method/
 
     for i in range(len(DirList)):
-        Get_Pic_base64(DirList[i], FileNameList[i])
+        Encode_Pic_base64(DirList[i], FileNameList[i])
         step += 1
 
 
