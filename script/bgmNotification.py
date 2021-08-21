@@ -35,10 +35,11 @@ import time
 
 def get_json_to_dict(url):
     r = requests.get(url, auth=('user', 'pass')) # Basic Auth
-    data = json.loads(r.text) #FIXME: diff with dumps
+    data = json.loads(r.text)
     _ans = data['items']
     return _ans
     # TODO: dict how to trnasform json
+    # 1. regex re.Match.groupdict(default=None)
 
 def get_today_date(command):
     if command == 'y':
