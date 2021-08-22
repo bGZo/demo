@@ -34,6 +34,8 @@ if __name__=='__main__':
     dataNum = int(data, 16)
     temp=encryNum(dataNum) # then we will split it to 256 scale
 
+    print(data)
+
     ans=[]
 
     while temp != 0:
