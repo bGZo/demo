@@ -11,11 +11,11 @@ def printBoard(board):
 if __name__=='__main__':
     whiteLocations=[]
     blackLocations=[]
-    # base="http://202.207.12.156:9012/step_06?ans="
 
-    # respond=requests.get('http://202.207.12.156:9012/step_06')
-    # data = (json.loads(respond.text))['questions']
-    data = 'ggffhggfhffgiefhfeheidehdidhghegcidfgiefcfeeeied'
+    base="http://202.207.12.156:9012/step_06?ans="
+    respond=requests.get('http://202.207.12.156:9012/step_06')
+    data = (json.loads(respond.text))['questions']
+    # data = 'ggffhggfhffgiefhfeheidehdidhghegcidfgiefcfeeeied'
 
     for i in range(len(data)//2):
         xLocation = i*2
@@ -25,9 +25,7 @@ if __name__=='__main__':
         else:
             whiteLocations.append((ord(data[xLocation])-ord('a'), ord(data[yLocation])-ord('a')))
 
-    
     board = [['.' for i in range(15)] for j in range(15)] 
-
 
     temp=''
     for i in range(len(blackLocations)):
@@ -37,20 +35,10 @@ if __name__=='__main__':
         board[blackLocations[i][0]] [blackLocations[i][1]]='x'
         temp += printBoard(board)
 
-
         if temp != '':
             temp +=',' 
         board[whiteLocations[i][0]] [whiteLocations[i][1]]='o'
         temp += printBoard(board)
 
-    print(temp)
-
-
-
-
-    #print(board)
-    # print(blackLocations[0][0])
-
-    # print(blackLocations)
-    # print(whiteLocations)
-    # data = data[1:len(data)-1]
+    respond=requests.get(base+temp)
+    print(respond.text)
