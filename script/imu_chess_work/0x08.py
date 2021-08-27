@@ -190,7 +190,7 @@ if __name__=='__main__':
 
         if _ans!='':
             _ans+=','
-        _ans+=chr(maxX+ord('a'))+','+chr(maxY+ord('a'))
+        _ans+=chr(maxX+ord('a'))+chr(maxY+ord('a'))
         # _ans+=str(maxX)+','+str(maxY)
 
         # _ans+= (maxX+ord('a'))
@@ -209,5 +209,3 @@ if __name__=='__main__':
     respond=requests.get(base+_ans)
     print(base+_ans)
     print(respond.text)
-
-    # {"is_success": false, "error": "17 of 17 is wrong"}
