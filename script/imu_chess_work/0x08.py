@@ -7,10 +7,8 @@ def printBoard(board):
     ans=""
     for i in range(len(board)):
         for j in range(len(board[i])):
-            # ans += board[i][j]
             print(board[i][j], end=' ')
         print('')
-    return ans
 
 def firstPrint(board, x, y):
     ans = ''
@@ -58,12 +56,8 @@ def fourthPrint(board, x, y):
             continue
         if y-moveList[i] < 0:
             continue
-        # if x==1 and y==13:
-            # print(x-moveList[i], end=' ')
-            # print(y-moveList[i])
         ans+=board[x-moveList[i]][y-moveList[i]]
     return ans
-
 
 def getStrScore(String): # 匹配两次??
     score=0
@@ -106,7 +100,6 @@ def getStrScore(String): # 匹配两次??
 
     return score
 
-
 if __name__=='__main__':
 
     _ans=''
@@ -116,9 +109,7 @@ if __name__=='__main__':
     base='http://202.207.12.156:9012/step_08?questions={'+str(data) +'}'
 
     for i in range(len(data)):
-    # for i in range(0,1):
         nowList = data[i]
-        # print(nowList)
         nextBlackOrWhite = 0 if (len(nowList)//2)%2!=0 else 1
         # x+y must be even number
         # odd is block(1), next is white(0).
@@ -136,12 +127,6 @@ if __name__=='__main__':
             else:
                 whiteLocations.append((ord(nowList[xLocation])-ord('a'), \
                     ord(nowList[yLocation])-ord('a')))
-        # if blackOrWhite==1:
-        #     i = len(nowList)//2
-        #     xLocation = i*2
-        #     yLocation = i*2+1
-        #     blackLocations.append((ord(nowList[xLocation])-ord('a'), \
-        #             ord(nowList[yLocation])-ord('a')))
 
         board = [['.' for i in range(15)] for j in range(15)]
 
@@ -155,8 +140,6 @@ if __name__=='__main__':
         for i in range(len(whiteLocations)):
             board[whiteLocations[i][0]] [whiteLocations[i][1]]=secondInit
 
-        # print(len(nowList)//2)
-        # print(nextBlackOrWhite)
         # printBoard(board)
 
         maxX, maxY, maxScore=0,0,0
@@ -165,7 +148,6 @@ if __name__=='__main__':
             for j in range(len(board[i])):
                 if board[i][j] != '.':
                     continue
-                # nowBackup=board[i][j]
                 board[i][j]='C'
                 tempSco=0
                 tempStr=firstPrint(board, i, j)
@@ -185,27 +167,12 @@ if __name__=='__main__':
                     maxScore=tempSco
                     maxX=i
                     maxY=j
-                # board[i][j]=nowBackup
                 board[i][j]='.'
 
         if _ans!='':
             _ans+=','
         _ans+=chr(maxX+ord('a'))+chr(maxY+ord('a'))
-        # _ans+=str(maxX)+','+str(maxY)
 
-        # _ans+= (maxX+ord('a'))
-        # print(maxX)
-        # print(maxY)
-        # print(maxScore)
-
-        # board[7][5]='C'
-        # print(thirdPrint(board, 7, 5))
-
-        # printBoard(boardScore)
-
-    # print(board[9][9])
-    # print(_ans)
     _ans='&ans='+_ans
     respond=requests.get(base+_ans)
-    print(base+_ans)
     print(respond.text)
