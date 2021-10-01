@@ -1,9 +1,8 @@
-Set-PSDebug -Trace 0 3
+Set-PSDebug -Trace 0
 
 $winXX = @(
     'C:\Users\15517\scoop\apps\logseq\current\Logseq.exe',
     'C:\Users\15517\scoop\apps\vscode\current\Code.exe'
-    # C:\Users\15517\scoop\apps\yesplaymusic\current\YesPlayMusic.exe
 )
 
 $uwp = @(
@@ -28,9 +27,6 @@ foreach($i in $uwp){
 }
 
 foreach($i in $webPrepare){
-    start -FilePath  $i 
-    # default browser open url, via https://www.pstips.net/opening-webpages-from-powershell.html
-    # start  'C:\Users\15517\scoop\apps\vivaldi\current\Application\vivaldi.exe ' $i
-    # NOTE: please don't use string to construct command, like `+$i`
+    start -FilePath  $i
+    start  'C:\Users\15517\scoop\apps\vivaldi\current\Application\vivaldi.exe ' $i # same function
 }
-
