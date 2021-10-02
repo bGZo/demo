@@ -1,4 +1,5 @@
 package stone;
+
 import stone.ast.ASTree;
 
 public class StoneException {
