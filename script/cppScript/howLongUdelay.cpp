@@ -1,3 +1,5 @@
+//author:dandelionflowers
+//update:200111
 #include<iostream>
 #include <windows.h>
 using namespace std;
