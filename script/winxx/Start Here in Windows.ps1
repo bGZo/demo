@@ -28,5 +28,5 @@ foreach($i in $uwp){
 
 foreach($i in $webPrepare){
     start -FilePath  $i
-    start  'C:\Users\15517\scoop\apps\vivaldi\current\Application\vivaldi.exe ' $i # same function
+    #start  'C:\Users\15517\scoop\apps\vivaldi\current\Application\vivaldi.exe ' $i # same function
 }
