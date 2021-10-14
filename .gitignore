@@ -1,5 +1,6 @@
 venv/
 
+# script cache
 *.pyc
 __pycache__/
 
@@ -18,3 +19,11 @@ build/
 # script complier
 complier/scriptMaker/.idea/*
 complier/scriptMaker/out/*
+
+# script JS node modules
+script/webJs/node_modules/*
+script/webJs/package-lock.json
+
+# makeDemo
+makeDemo/*.o
+makeDemo/build/*
