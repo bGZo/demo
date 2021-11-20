@@ -1,0 +1,61 @@
+## 命令
+
+**echo**
+    multi-output
+
+
+iptables
+    https://www.zsythink.net/archives/1199
+
+
+**ps/grep** => $ ps -ef | grep -v grep
+    表格名词:
+        UID 程序被该 UID 所拥有
+        PID 程序 ID 
+        PPID 则是其上级父程序的ID
+        C CPU使用的资源百分比
+        STIME  系统启动时间
+        TTY  登入者的终端机位置
+        TIME 使用掉的CPU时间。
+        CMD 所下达的是什么指令
+    LIST:
+        `-e`: Select all processes.  Identical to -A.
+        `-f`:  Do full-format listing.  This option can be combined with 
+            many other UNIX-style options to add additional
+            columns.  It also causes the command arguments to be
+            printed.  When used with -L, the NLWP (number of
+            threads) and LWP (thread ID) columns will be added.  See
+            the c option, the format keyword args, and the format
+            keyword comm.
+        `aux`: 用BSD的格式来显示参数. 
+
+
+**grep**
+    LIST
+        `grep`: Global Regular Expression Print 
+        `grep -v grep` means that do not include the grep used for filtering in the command output.via: https://stackoverflow.com/questions/29454101/unix-grep-command-grep-v-grep
+        `-v`: Invert the sense of matching, to select non-matching lines.
+
+
+
+## 语法
+
+**file extence** => `if [[ ! -e "adbyby.tar.gz" ]]; then xxx;`
+    it's telling the shell to check into the existence of 
+    $filename to know whether to choose the then or else statement.
+    [[ ]] denotes a boolean variable whose value depends on the expression within.
+    Traditionally, [ ] was the bash syntax to issue test command, 
+    returning the value of the expression, regardless of type and in any context. 
+    Newer versions of bash adopted [[ ]] as a keyword exclusively for if-statements. (via https://askubuntu.com/questions/780082/what-does-if-e-filename-means)
+    LIST:
+        -e filename 如果 filename存在，则为真
+        -d filename 如果 filename为目录，则为真
+        -f filename 如果 filename为常规文件，则为真
+        -L filename 如果 filename为符号链接，则为真
+        -r filename 如果 filename可读，则为真
+        -w filename 如果 filename可写，则为真
+        -x filename 如果 filename可执行，则为真
+        -s filename 如果文件长度不为0，则为真
+        -h filename 如果文件是软链接，则为真 
+        // https://zhidao.baidu.com/question/1383018121535109180.html
+
