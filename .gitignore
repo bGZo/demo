@@ -1,29 +1,79 @@
-venv/
+# +----------------+
+# |Generical Config|
+# +----------------+
+build/
+# +------------------+
+# |Generic Config End|
+# +------------------+
 
-# script cache
-*.pyc
-__pycache__/
 
+# +--------+
+# |Jetbrain|
+# +--------+
+.idea/
+# +------------+
+# |Jetbrain end|
+# +------------+
+
+
+# +--------------+
+# |nodeJS modules|
+# +--------------+
+node_modules/
+package-lock.json
+# +------------------+
+# |nodeJS modules End|
+# +------------------+
+
+
+# +-----+
+# |flask|
+# +-----+
 instance/
+# +---------+
+# |flask End|
+# +---------+
 
+
+# +------------+
+# |python Cache|
+# +------------+
+.ipynb_checkpoints/
+__pycache__/
 .pytest_cache/
+*.pyc
+# +----------------+
+# |python Cache End|
+# +----------------+
+
+
+# +--------+
+# |C make|
+# +--------+
+*.o
+*.i
+# +----------+
+# |C make End|
+# +----------+
+
+
+# +-----------+
+# |unknow file|
+# +-----------+
+venv/
 .coverage
 htmlcov/
-
 dist/
-build/
 *.egg-info/
+# +---------------+
+# |unknow file End|
+# +---------------+
 
-# flask-tutorial
 
-# script complier
-complier/scriptMaker/.idea/*
-complier/scriptMaker/out/*
-
-# script JS node modules
-script/webJs/node_modules/*
-script/webJs/package-lock.json
-
-# makeDemo
-makeDemo/*.o
-makeDemo/build/*
+# +--------+
+# |complier|
+# +--------+
+out/
+# +------------+
+# |complier End|
+# +------------+
