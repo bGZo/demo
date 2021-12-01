@@ -1,8 +1,9 @@
 #! /usr/bin/python3
 from github import Github
+from cfig import githubToken
 
 # using an access token
-g = Github("")
+g = Github(githubToken)
 
 for repo in g.get_user().get_repos():
     print(repo.name)

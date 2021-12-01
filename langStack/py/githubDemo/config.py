@@ -64,3 +64,17 @@ BLOG_ISSUE_STAT_TEMPLATE = "| {name} | {start} | {update} | {comments} | \n"
 MONTH_SUMMARY_HEAD = "| Month | Number | \n | ---- | ---- | \n"
 
 MONTH_SUMMARY_STAT_TEMPLATE = "| {month} | {number} |\n"
+
+
+# +-----------------+
+# | General Showing |
+# +-----------------+
+IssueTableHead = "\
+## Issues I Created In 2021\n\
+\n\
+| Name | Update At | Url |\n\
+| ---- | ---- | ---- |\n"
+
+IssueTableTemplate = "\
+| {issueName} | {issueUpdate} | {issueUrl} |\n"
+
