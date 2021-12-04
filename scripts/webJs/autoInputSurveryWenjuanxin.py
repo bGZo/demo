@@ -1,31 +1,42 @@
-# -*- coding: utf-8 -*-
-# Python Selenium address : https://pypi.org/project/selenium/
-# Test Address: https://www.wenjuan.com/s/6VVJZfT/
+#!/usr/bin/python3
+# author: bGZoCg
+# update: 211205
 
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 import random
 import time
 
-url = str(input('请输入调查问卷url：'))
-t = int(input('请输入提交问卷次数：'))
+url = str(input('Url: '))
+times = int(input('Loop Num: '))
 
-for times in range(t):
-    driver = webdriver.Chrome()
+for t in range(times):
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.get(url)
-    
-    questions = driver.find_elements_by_css_selector('.matrix')# locate question's question 
+    questions = driver.find_elements(By.CLASS_NAME, 'question')
+    for question in questions:
+        answers = question.find_elements(By.CLASS_NAME, 'init_option')
 
-    for answers in questions:
-        answer = answers.find_elements_by_css_selector('.icheckbox_div') # locate specific question option
-        if not answer: # what to do???
-            blank_potion = answers.find_element_by_css_selector('.blank.option')
-            blank_potion.send_keys('没有')
+        if not answers:
+            print('None')
             continue
-        choose_ans = random.choice(answer)
-        choose_ans.click()
-    subumit_button = driver.find_element_by_css_selector('#next_button')
-    subumit_button.click()
-    print('已经成功提交了{}次问卷'.format(int(times) + int(1)))
 
-    time.sleep(1) # add time each survery
-    driver.quit()
+        if(question.get_dom_attribute('questiontype')=='2'): # single
+            random.choice(answers).click()
+        if(question.get_dom_attribute('questiontype')=='3'): # multi
+            odd = random.randint(1,len(answers))
+            while odd%2==0:
+                odd = random.randint(1,len(answers))
+            # NOTE: odd let multi question must choose one.
+
+            for i in range(odd):
+                random.choice(answers).click()
+
+    # time.sleep(30) # Note: check for your random data
+
+    driver.find_element(By.ID, 'next_button').click()
+    print('[{}] sucessfully'.format(int(t) + int(1)))
+
+    time.sleep(5)
+    driver.close() # TODO: driver.quit() vs driver.close()
