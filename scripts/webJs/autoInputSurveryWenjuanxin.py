@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 # author: bGZoCg
 # update: 211205
+# requirement.txt
+    # selenium@4.1.0
+
+import time
+import random
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-import random
-import time
 
 url = str(input('Url: '))
 times = int(input('Loop Num: '))
