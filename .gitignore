@@ -2,6 +2,7 @@
 # |Generical Config|
 # +----------------+
 build/
+cfig.py
 # +------------------+
 # |Generic Config End|
 # +------------------+
@@ -11,6 +12,7 @@ build/
 # |Jetbrain|
 # +--------+
 .idea/
+.vscode/
 # +------------+
 # |Jetbrain end|
 # +------------+
