@@ -1,5 +1,7 @@
 # Color Palette
 
+<!-- Inspiring by making labels for https://github.com/bGZoCg/2021/issues. -->
+
 |  Value  |           Showing               | Mark |
 | ------- | ------------------------------- | ---- |
 | #f09199 | <font color="#f09199">███<font> | Bangumi |
