@@ -1,0 +1,654 @@
+1. [-] run mysql in ubuntu https://segmentfault.com/a/1190000020887365
+
+  emitting double-array: 100% |###########################################|
+  reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+  emitting matrix      : 100% |###########################################|
+
+  done!
+  update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+  Setting up mysql-server-8.0 (8.0.25-0ubuntu0.20.04.1) ...
+  invoke-rc.d: could not determine current runlevel
+  * Stopping MySQL database server mysqld                                           [ OK ]
+  update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+  Renaming removed key_buffer and myisam-recover options (if present)
+  mysqld will log errors to /var/log/mysql/error.log
+  mysqld is running as pid 6773
+  Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+  invoke-rc.d: could not determine current runlevel
+  Setting up mysql-server (8.0.25-0ubuntu0.20.04.1) ...
+  Processing triggers for systemd (245.4-4ubuntu3.6) ...
+  Processing triggers for man-db (2.9.1-1) ...
+  Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+
+
+  then ....
+
+
+
+  System has not been booted with systemd as init system (PID 1). Can't operate.
+  Failed to connect to bus: Host is down
+  A: https://stackoverflow.com/questions/52197246/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate
+
+  ```
+  $ sudo service mysql start
+  [sudo] password for bgzocg:
+  * Starting MySQL database server mysqld                                         su: warning: cannot change directory to /nonexistent: No such file or directory
+                                                                            [ OK ]
+
+  ╭─bgzocg@bGZoCg-HP-PC ...Users/15517/Desktop
+  ╰─ $  systemctl enable mysql
+  Synchronizing state of mysql.service with SysV service script with /lib/systemd/systemd-sysv-install.
+  Executing: /lib/systemd/systemd-sysv-install enable mysql
+  ╰─ $  systemctl enable mysql
+  Synchronizing state of mysql.service with SysV service script with /lib/systemd/systemd-sysv-install.
+  Executing: /lib/systemd/systemd-sysv-install enable mysql
+  ╭─bgzocg@bGZoCg-HP-PC ...Users/15517/Desktop
+  ╰─ $ use mysql;
+  zsh: command not found: use
+  ╭─bgzocg@bGZoCg-HP-PC ...Users/15517/Desktop
+  ╰─ $ sudo mysql
+  Welcome to the MySQL monitor.  Commands end with ; or \g.
+  Your MySQL connection id is 10
+  Server version: 8.0.25-0ubuntu0.20.04.1 (Ubuntu)
+
+  Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+  Oracle is a registered trademark of Oracle Corporation and/or its
+  affiliates. Other names may be trademarks of their respective
+  owners.
+
+  Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+  mysql> use mysql;
+  Reading table information for completion of table and column names
+  You can turn off this feature to get a quicker startup with -A
+
+  Database changed
+  mysql>  show fields from user;
+  +--------------------------+-----------------------------------+------+-----+-----------------------+-------+
+  | Field                    | Type                              | Null | Key | Default               | Extra |
+  +--------------------------+-----------------------------------+------+-----+-----------------------+-------+
+  | Host                     | char(255)                         | NO   | PRI |                       |       |
+  | User                     | char(32)                          | NO   | PRI |                       |       |
+  | Select_priv              | enum('N','Y')                     | NO   |     | N                     |       |
+  | Insert_priv              | enum('N','Y')                     | NO   |     | N                     |       |
+  | Update_priv              | enum('N','Y')                     | NO   |     | N                     |       |
+  | Delete_priv              | enum('N','Y')                     | NO   |     | N                     |       |
+  | Create_priv              | enum('N','Y')                     | NO   |     | N                     |       |
+  | Drop_priv                | enum('N','Y')                     | NO   |     | N                     |       |
+  | Reload_priv              | enum('N','Y')                     | NO   |     | N                     |       |
+  | Shutdown_priv            | enum('N','Y')                     | NO   |     | N                     |       |
+  | Process_priv             | enum('N','Y')                     | NO   |     | N                     |       |
+  | File_priv                | enum('N','Y')                     | NO   |     | N                     |       |
+  | Grant_priv               | enum('N','Y')                     | NO   |     | N                     |       |
+  | References_priv          | enum('N','Y')                     | NO   |     | N                     |       |
+  | Index_priv               | enum('N','Y')                     | NO   |     | N                     |       |
+  | Alter_priv               | enum('N','Y')                     | NO   |     | N                     |       |
+  | Show_db_priv             | enum('N','Y')                     | NO   |     | N                     |       |
+  | Super_priv               | enum('N','Y')                     | NO   |     | N                     |       |
+  | Create_tmp_table_priv    | enum('N','Y')                     | NO   |     | N                     |       |
+  | Lock_tables_priv         | enum('N','Y')                     | NO   |     | N                     |       |
+  | Execute_priv             | enum('N','Y')                     | NO   |     | N                     |       |
+  | Repl_slave_priv          | enum('N','Y')                     | NO   |     | N                     |       |
+  | Repl_client_priv         | enum('N','Y')                     | NO   |     | N                     |       |
+  | Create_view_priv         | enum('N','Y')                     | NO   |     | N                     |       |
+  | Show_view_priv           | enum('N','Y')                     | NO   |     | N                     |       |
+  | Create_routine_priv      | enum('N','Y')                     | NO   |     | N                     |       |
+  | Alter_routine_priv       | enum('N','Y')                     | NO   |     | N                     |       |
+  | Create_user_priv         | enum('N','Y')                     | NO   |     | N                     |       |
+  | Event_priv               | enum('N','Y')                     | NO   |     | N                     |       |
+  | Trigger_priv             | enum('N','Y')                     | NO   |     | N                     |       |
+  | Create_tablespace_priv   | enum('N','Y')                     | NO   |     | N                     |       |
+  | ssl_type                 | enum('','ANY','X509','SPECIFIED') | NO   |     |                       |       |
+  | ssl_cipher               | blob                              | NO   |     | NULL                  |       |
+  | x509_issuer              | blob                              | NO   |     | NULL                  |       |
+  | x509_subject             | blob                              | NO   |     | NULL                  |       |
+  | max_questions            | int unsigned                      | NO   |     | 0                     |       |
+  | max_updates              | int unsigned                      | NO   |     | 0                     |       |
+  | max_connections          | int unsigned                      | NO   |     | 0                     |       |
+  | max_user_connections     | int unsigned                      | NO   |     | 0                     |       |
+  | plugin                   | char(64)                          | NO   |     | caching_sha2_password |       |
+  | authentication_string    | text                              | YES  |     | NULL                  |       |
+  | password_expired         | enum('N','Y')                     | NO   |     | N                     |       |
+  | password_last_changed    | timestamp                         | YES  |     | NULL                  |       |
+  | password_lifetime        | smallint unsigned                 | YES  |     | NULL                  |       |
+  | account_locked           | enum('N','Y')                     | NO   |     | N                     |       |
+  | Create_role_priv         | enum('N','Y')                     | NO   |     | N                     |       |
+  | Drop_role_priv           | enum('N','Y')                     | NO   |     | N                     |       |
+  | Password_reuse_history   | smallint unsigned                 | YES  |     | NULL                  |       |
+  | Password_reuse_time      | smallint unsigned                 | YES  |     | NULL                  |       |
+  | Password_require_current | enum('N','Y')                     | YES  |     | NULL                  |       |
+  | User_attributes          | json                              | YES  |     | NULL                  |       |
+  +--------------------------+-----------------------------------+------+-----+-----------------------+-------+
+  51 rows in set (0.00 sec)
+
+  mysql> select host,user from user;
+  +-----------+------------------+
+  | host      | user             |
+  +-----------+------------------+
+  | localhost | debian-sys-maint |
+  | localhost | mysql.infoschema |
+  | localhost | mysql.session    |
+  | localhost | mysql.sys        |
+  | localhost | root             |
+  +-----------+------------------+
+  5 rows in set (0.00 sec)
+
+  mysql> create user 'bgzocg'@'localhost' identified by '0';
+  Query OK, 0 rows affected (0.01 sec)
+
+  mysql>  select host,user from user;
+  +-----------+------------------+
+  | host      | user             |
+  +-----------+------------------+
+  | localhost | bgzocg           |
+  | localhost | debian-sys-maint |
+  | localhost | mysql.infoschema |
+  | localhost | mysql.session    |
+  | localhost | mysql.sys        |
+  | localhost | root             |
+  +-----------+------------------+
+  6 rows in set (0.00 sec)
+
+  mysql> flush privileges;
+  Query OK, 0 rows affected (0.01 sec)
+
+  mysql> GRANT ALL PRIVILEGES ON *.* TO 'bgzocg'@'%' IDENTIFIED BY '0' WITH GRANT OPTION;
+  ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IDENTIFIED BY '0' WITH GRANT OPTION' at line 1
+  mysql> create user 'bgzocg'@'%' identified by '0';
+  Query OK, 0 rows affected (0.02 sec)
+
+  mysql> flush privileges;
+  Query OK, 0 rows affected (0.01 sec)
+
+  mysql> GRANT ALL PRIVILEGES ON *.* TO 'bgzocg'@'%' IDENTIFIED BY '0' WITH GRANT OPTION;
+  ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IDENTIFIED BY '0' WITH GRANT OPTION' at line 1
+  mysql> mysql --version
+      -> ;
+  ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql --version' at line 1
+  mysql>  GRANT ALL PRIVILEGES ON *.* TO 'bgzocg'@'%' WITH GRANT OPTION;
+  Query OK, 0 rows affected (0.01 sec)
+
+  mysql>
+
+  ```
+
+  then
+
+  重启虚拟机
+
+  from :
+  - https://stackoverflow.com/questions/50177216/how-to-grant-all-privileges-to-root-user-in-mysql-8-0
+
+
+2. 没有装插件的zsh无法移动到上一个单词
+  https://serverfault.com/questions/386871/getting-5d-when-hitting-ctrl-arrow-key-in-a-terminal-on-freebsd#comment1311911_462893
+
+
+3. not reroad in some app, such as hugo, flask and U should see:
+  - https://github.com/microsoft/WSL/issues/4417
+  - https://discourse.gohugo.io/t/wsl-and-file-modification-detection-livereload-troubles/29445
+
+
+4. [-] Arguments: 参数
+
+5. [-] maybe all I do is making me a geek, yet not a programer
+
+6. I try a repo but lost 
+
+  ```shell
+  ╭─bgzocg@bGZoCg-HP-PC ...15517/Desktop/django_ex_v1.0.1
+  ╰─ $ python3 manage.py runserver
+  Watching for file changes with StatReloader
+  Performing system checks...
+
+  Exception in thread django-main-thread:
+  Traceback (most recent call last):
+    File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+      self.run()
+    File "/usr/lib/python3.8/threading.py", line 870, in run
+      self._target(*self._args, **self._kwargs)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+      fn(*args, **kwargs)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+      self.check(display_num_errors=True)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/core/management/base.py", line 419, in check
+      all_issues = checks.run_checks(
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 76, in run_checks
+      new_errors = check(app_configs=app_configs, databases=databases)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+      all_namespaces = _load_all_namespaces(resolver)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+      url_patterns = getattr(resolver, 'url_patterns', [])
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+      res = instance.__dict__[self.name] = self.func(instance)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 598, in url_patterns
+      patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+      res = instance.__dict__[self.name] = self.func(instance)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 591, in urlconf_module
+      return import_module(self.urlconf_name)
+    File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+      return _bootstrap._gcd_import(name[level:], package, level)
+    File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+    File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+    File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+    File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+    File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+    File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+    File "/mnt/c/Users/15517/Desktop/django_ex_v1.0.1/project/urls.py", line 9, in <module>
+      url(r'^$', 'welcome.views.index'),
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/conf/urls/__init__.py", line 22, in url
+      return re_path(regex, view, kwargs, name)
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/django/urls/conf.py", line 73, in _path
+      raise TypeError('view must be a callable or a list/tuple in the case of include().')
+  TypeError: view must be a callable or a list/tuple in the case of include().
+  ^C%
+  ╭─bgzocg@bGZoCg-HP-PC ...15517/Desktop/django_ex_v1.0.1
+  ╰─ $ history 0 | grep pip3
+    17  sudo apt install webp cmake gcc g++ npm neofetch pip3 tree enca openjdk-11-jdk
+    83  pip3
+    84  sudo apt install pip3
+    85  sudo apt install python-pip3
+    87  pip3 install aiohttp
+    88  pip3 install jinja2 -i https://pypi.tuna.tsinghua.edu.cn/simple
+    89  pip3 install aiomysql -i https://pypi.tuna.tsinghua.edu.cn/simple
+    488  pip3 install django-debug-toolbar
+  ╭─bgzocg@bGZoCg-HP-PC ...15517/Desktop/django_ex_v1.0.1
+  ╰─ $ pip3 install psycopg2 gunicorn whitenoise -i https://pypi.tuna.tsinghua.edu.cn/simple
+  Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+  Collecting psycopg2
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fd/ae/98cb7a0cbb1d748ee547b058b14604bd0e9bf285a8e0cc5d148f8a8a952e/psycopg2-2.8.6.tar.gz (383 kB)
+      |████████████████████████████████| 383 kB 1.2 MB/s
+      ERROR: Command errored out with exit status 1:
+      command: /usr/bin/python3 -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-j7h2xsje/psycopg2/setup.py'"'"'; __file__='"'"'/tmp/pip-install-j7h2xsje/psycopg2/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /tmp/pip-install-j7h2xsje/psycopg2/pip-egg-info
+          cwd: /tmp/pip-install-j7h2xsje/psycopg2/
+      Complete output (23 lines):
+      running egg_info
+      creating /tmp/pip-install-j7h2xsje/psycopg2/pip-egg-info/psycopg2.egg-info
+      writing /tmp/pip-install-j7h2xsje/psycopg2/pip-egg-info/psycopg2.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-install-j7h2xsje/psycopg2/pip-egg-info/psycopg2.egg-info/dependency_links.txt
+      writing top-level names to /tmp/pip-install-j7h2xsje/psycopg2/pip-egg-info/psycopg2.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-install-j7h2xsje/psycopg2/pip-egg-info/psycopg2.egg-info/SOURCES.txt'
+
+      Error: pg_config executable not found.
+
+      pg_config is required to build psycopg2 from source.  Please add the directory
+      containing pg_config to the $PATH or specify the full executable path with the
+      option:
+
+          python setup.py build_ext --pg-config /path/to/pg_config build ...
+
+      or with the pg_config option in 'setup.cfg'.
+
+      If you prefer to avoid building psycopg2 from source, please install the PyPI
+      'psycopg2-binary' package instead.
+
+      For further information please check the 'doc/src/install.rst' file (also at
+      <https://www.psycopg.org/docs/install.html>).
+
+      ----------------------------------------
+  ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+  ╭─bgzocg@bGZoCg-HP-PC ...15517/Desktop/django_ex_v1.0.1
+  ╰─ $ pip3 install gunicorn whitenoise -i https://pypi.tuna.tsinghua.edu.cn/simple
+  Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+  Collecting gunicorn
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e4/dd/5b190393e6066286773a67dfcc2f9492058e9b57c4867a95f1ba5caf0a83/gunicorn-20.1.0-py3-none-any.whl (79 kB)
+      |████████████████████████████████| 79 kB 139 kB/s
+  Collecting whitenoise
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/50/83/5d91949e370e52578a99ef6391c3b3e19f9fd1f5b4f58d5cbd6e2862d4a8/whitenoise-5.2.0-py2.py3-none-any.whl (19 kB)
+  Requirement already satisfied: setuptools>=3.0 in /usr/lib/python3/dist-packages (from gunicorn) (45.2.0)
+  Installing collected packages: gunicorn, whitenoise
+  Successfully installed gunicorn-20.1.0 whitenoise-5.2.0
+  ╭─bgzocg@bGZoCg-HP-PC ...15517/Desktop/django_ex_v1.0.1
+  ╰─ $ pip3 install psycopg2 -i https://pypi.tuna.tsinghua.edu.cn/simple
+  Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+  Collecting psycopg2
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fd/ae/98cb7a0cbb1d748ee547b058b14604bd0e9bf285a8e0cc5d148f8a8a952e/psycopg2-2.8.6.tar.gz (383 kB)
+      ERROR: Command errored out with exit status 1:
+      command: /usr/bin/python3 -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-f_wvnitl/psycopg2/setup.py'"'"'; __file__='"'"'/tmp/pip-install-f_wvnitl/psycopg2/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /tmp/pip-install-f_wvnitl/psycopg2/pip-egg-info
+          cwd: /tmp/pip-install-f_wvnitl/psycopg2/
+      Complete output (23 lines):
+      running egg_info
+      creating /tmp/pip-install-f_wvnitl/psycopg2/pip-egg-info/psycopg2.egg-info
+      writing /tmp/pip-install-f_wvnitl/psycopg2/pip-egg-info/psycopg2.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-install-f_wvnitl/psycopg2/pip-egg-info/psycopg2.egg-info/dependency_links.txt
+      writing top-level names to /tmp/pip-install-f_wvnitl/psycopg2/pip-egg-info/psycopg2.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-install-f_wvnitl/psycopg2/pip-egg-info/psycopg2.egg-info/SOURCES.txt'
+
+      Error: pg_config executable not found.
+
+      pg_config is required to build psycopg2 from source.  Please add the directory
+      containing pg_config to the $PATH or specify the full executable path with the
+      option:
+
+          python setup.py build_ext --pg-config /path/to/pg_config build ...
+
+      or with the pg_config option in 'setup.cfg'.
+
+      If you prefer to avoid building psycopg2 from source, please install the PyPI
+      'psycopg2-binary' package instead.
+
+      For further information please check the 'doc/src/install.rst' file (also at
+      <https://www.psycopg.org/docs/install.html>).
+
+      ----------------------------------------
+  ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+  ```
+
+  how could i do but refer https://stackoverflow.com/questions/11618898/pg-config-executable-not-found
+
+
+7. [-] change folder icon
+
+  > If you browse for your own icons, you can select any EXE, DLL, or ICO file. After selecting the file, the “Change Icon” window will show the icons contained in the file you selected. Click the one you want and then click “OK.” Here, we’re changing the “This PC” icon to use one that looks more like a laptop than a desktop.
+
+8. [-] 一些时候不愿意尝试明知故问的错误真的让我有点迷失, 很多隐藏在其中的知识点就这样被我漏掉了.
+
+10. [] linux 非法命名文件, windows 怎么删除???
+  - https://blog.csdn.net/cn_ldx/article/details/5696721?depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs
+  - https://blog.csdn.net/rainday0310/article/details/6654650
+  ```shell
+   cd /d d:
+  ```
+
+
+11. []命令行历史全记录
+  - https://juejin.cn/post/6844903849036251150
+  - https://developer.aliyun.com/article/708548
+
+
+12. [-] 如何强制目录git初始化
+  - https://flask.palletsprojects.com/en/2.0.x/tutorial/factory/#run-the-application
+  - https://www.zhihu.com/question/55613595
+  new touch/build a floder and `git init` it, move the `.git` to your no empty path 
+  then you could git add and commit the code, haha, it really could do that!
+
+13. [-] yarn add gitbook version error  
+
+  ```shell
+  Given support for Node 8 was dropped 2 months ago, the package.json has an updated engines field for Node 10 onwards, and there is a workaround of --ignore-engines for older versions that are impacted, happy to close.
+  sudo yarn global add gitbook-cli --registry=http://registry.npm.taobao.org --ignore-engines
+  ```
+
+  https://github.com/snyk/snyk/issues/1270
+
+14. [-] github serve error
+
+  Error: ENOENT: no such file or directory, stat ‘C:***demo_book\_book\gitbook\gitbook-plugin-fontsettings\fontsettings.js’
+
+
+
+  ```shell
+  vim ~/.gitbook/versions/3.2.3/lib/output/website/copyPluginAssets.jss
+
+  # logger.debug.ln('copy resources from plugin', assetsFolder);
+  #
+  # return fs.copyDir(
+  #     assetsFolder,
+  #     assetOutputFolder,
+  #     {
+  #        deleteFirst: false,
+  #        overwrite: true,
+  #   ---> confirm: false <---
+  #    }
+  #);
+  ```
+
+15. [-] zsh_history
+
+https://shapeshed.com/zsh-corrupt-history-file/
+
+16. []
+
+  ```shell
+  ╭─bgzocg@bGZoCg-HP-PC ...15517/Desktop/course_management_system-master
+  ╰─ $ pip3 install -r ./requirements.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple
+  Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+  Collecting alembic==1.0.10
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/6e/8b/fa3bd058cccd5e9177fea4efa26bfb769228fdd3178436ad5e05830ef6ef/alembic-1.0.10.tar.gz (1.0 MB)
+      |████████████████████████████████| 1.0 MB 206 kB/s
+  Collecting certifi==2019.3.9
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/60/75/f692a584e85b7eaba0e03827b3d51f45f571c2e793dd731e598828d380aa/certifi-2019.3.9-py2.py3-none-any.whl (158 kB)
+      |████████████████████████████████| 158 kB 38 kB/s
+  Collecting Click==7.0
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81 kB)
+      |████████████████████████████████| 81 kB 903 kB/s
+  Collecting dominate==2.3.5
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1a/54/50ec03a4b4114e2c02d049cc26fe6ad8f0653ba5d0cd55d7c9bf9a260434/dominate-2.3.5-py2.py3-none-any.whl (25 kB)
+  Collecting Flask==1.0.3
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9a/74/670ae9737d14114753b8c8fdf2e8bd212a05d3b361ab15b44937dfd40985/Flask-1.0.3-py2.py3-none-any.whl (92 kB)
+      |████████████████████████████████| 92 kB 1.3 MB/s
+  Collecting Flask-Bootstrap==3.3.7.1
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/88/53/958ce7c2aa26280b7fd7f3eecbf13053f1302ee2acb1db58ef32e1c23c2a/Flask-Bootstrap-3.3.7.1.tar.gz (456 kB)
+      |████████████████████████████████| 456 kB 245 kB/s
+  Collecting Flask-Login==0.4.1
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c1/ff/bd9a4d2d81bf0c07d9e53e8cd3d675c56553719bbefd372df69bf1b3c1e4/Flask-Login-0.4.1.tar.gz (14 kB)
+  Collecting Flask-Migrate==2.5.2
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4b/22/d20a105f13c58fe590ef38ac59d5cabc1a917549ea8f90b0ca7b4e84f6be/Flask_Migrate-2.5.2-py2.py3-none-any.whl (13 kB)
+  Collecting Flask-Script==2.0.6
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/00/a4/cd587b2b19f043b65bf33ceda2f6e4e6cdbd0ce18d01a52b9559781b1da6/Flask-Script-2.0.6.tar.gz (43 kB)
+      |████████████████████████████████| 43 kB 392 kB/s
+  Collecting Flask-SQLAlchemy==2.4.0
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/08/ca/582442cad71504a1514a2f053006c8bb128844133d6076a4df17117545fa/Flask_SQLAlchemy-2.4.0-py2.py3-none-any.whl (17 kB)
+  Collecting Flask-WTF==0.14.2
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/60/3a/58c629472d10539ae5167dc7c1fecfa95dd7d0b7864623931e3776438a24/Flask_WTF-0.14.2-py2.py3-none-any.whl (14 kB)
+  Collecting itsdangerous==1.1.0
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+  Collecting Jinja2==2.10.1
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1d/e7/fd8b501e7a6dfe492a433deb7b9d833d39ca74916fa8bc63dd1a4947a671/Jinja2-2.10.1-py2.py3-none-any.whl (124 kB)
+      |████████████████████████████████| 124 kB 553 kB/s
+  Collecting Mako==1.0.11
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/37/d7/2287b48aaeccdf2c75040fa5db69f6fad1877483aa6ce68316ab959ad1a0/Mako-1.0.11.tar.gz (461 kB)
+      |████████████████████████████████| 461 kB 202 kB/s
+  Collecting MarkupSafe==1.1.1
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/80/16/98afa5c19296aaf7b16d1eb3c7e997656e6cfad79606e7d3885905615e96/MarkupSafe-1.1.1-cp38-cp38-manylinux2010_x86_64.whl (32 kB)
+  Collecting psycopg2==2.8.5
+    Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a8/8f/1c5690eebf148d1d1554fc00ccf9101e134636553dbb75bdfef4f85d7647/psycopg2-2.8.5.tar.gz (380 kB)
+      |████████████████████████████████| 380 kB 766 kB/s
+      ERROR: Command errored out with exit status 1:
+      command: /usr/bin/python3 -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-t3x7r973/psycopg2/setup.py'"'"'; __file__='"'"'/tmp/pip-install-t3x7r973/psycopg2/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /tmp/pip-install-t3x7r973/psycopg2/pip-egg-info
+          cwd: /tmp/pip-install-t3x7r973/psycopg2/
+      Complete output (23 lines):
+      running egg_info
+      creating /tmp/pip-install-t3x7r973/psycopg2/pip-egg-info/psycopg2.egg-info
+      writing /tmp/pip-install-t3x7r973/psycopg2/pip-egg-info/psycopg2.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-install-t3x7r973/psycopg2/pip-egg-info/psycopg2.egg-info/dependency_links.txt
+      writing top-level names to /tmp/pip-install-t3x7r973/psycopg2/pip-egg-info/psycopg2.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-install-t3x7r973/psycopg2/pip-egg-info/psycopg2.egg-info/SOURCES.txt'
+
+      Error: pg_config executable not found.
+
+      pg_config is required to build psycopg2 from source.  Please add the directory
+      containing pg_config to the $PATH or specify the full executable path with the
+      option:
+
+          python setup.py build_ext --pg-config /path/to/pg_config build ...
+
+      or with the pg_config option in 'setup.cfg'.
+
+      If you prefer to avoid building psycopg2 from source, please install the PyPI
+      'psycopg2-binary' package instead.
+
+      For further information please check the 'doc/src/install.rst' file (also at
+      <https://www.psycopg.org/docs/install.html>).
+
+      ----------------------------------------
+  ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command 
+  output.
+  ```
+
+
+15. ImportError: cannot import name 'Str' from '_ast' (unknown location)
+
+  ```shell
+  ╭─bgzocg@bGZoCg-HP-PC ...15517/Desktop/course_management_system-master 
+  ╰─ $ python3 ./manage.py db migrate  
+  Traceback (most recent call last):
+    File "./manage.py", line 2, in <module>
+      from app import app, db
+    File "/mnt/c/Users/15517/Desktop/course_management_system-master/app/__init__.py", line 3, in <module>    from flask_migrate import Migrate
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/flask_migrate/__init__.py", line 11, in <module>    from alembic import __version__ as __alembic_version__
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/__init__.py", line 4, in <module>       
+      from . import context  # noqa
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/context.py", line 1, in <module>        
+      from .runtime.environment import EnvironmentContext
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/runtime/environment.py", line 1, in <module>
+      from .migration import MigrationContext
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/runtime/migration.py", line 15, in <module>
+      from .. import ddl
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/ddl/__init__.py", line 1, in <module>   
+      from . import mssql  # noqa
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/ddl/mssql.py", line 8, in <module>      
+      from .base import AddColumn
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/ddl/base.py", line 9, in <module>       
+      from .. import util
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/util/__init__.py", line 19, in <module> 
+      from .pyfiles import coerce_resource_to_filename  # noqa
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/alembic/util/pyfiles.py", line 6, in <module>   
+      from mako.template import Template
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/mako/template.py", line 20, in <module>
+      from mako import codegen
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/mako/codegen.py", line 13, in <module>
+      from mako import ast
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/mako/ast.py", line 14, in <module>
+      from mako import pyparser
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/mako/pyparser.py", line 17, in <module>
+      from mako import _ast_util
+    File "/home/bgzocg/.local/lib/python3.8/site-packages/mako/_ast_util.py", line 67, in <module>        
+      from _ast import Str
+  ImportError: cannot import name 'Str' from '_ast' (unknown location)
+
+16. [ ] scoop update
+  ```
+  Notes
+  -----
+  Add Visual Studio Code as a context menu option by running:
+  "C:\Users\15517\scoop\apps\vscode\current\vscode-install-context.reg"
+  ```
+
+17. [ ] wsl
+  ```
+  This workspace is on the Windows file system (/mnt/). For best performance, we recommend moving the workspace to the Linux file system (~/home).
+  ```
+
+18. [-] wsl extension can't install from reddit 
+
+  shouldn't ~/.code/extensions be ~/.vscode/extensions ?
+
+  In any case, I don't really use vscode in wsl anymore opting for Windows instead, but back then I sim linked my vscode windows extensions folder to ~/.vscode/extensions so I wouldn't have to download and update extensions twice on my shitty home wifi.
+
+19. [] 卸载的时候一堆找不到pip安装的包?????
+  anaconda 好麻烦,,,为什么我都没想用它它就自己用上了???
+
+
+20. 换了python 版本但是还是不可以用???
+
+  ```
+  Traceback (most recent call last):
+  File "./manage.py", line 2, in <module>
+    from app import app, db
+  File "C:\Users\15517\Desktop\course_management_system\app\__init__.py", line 1, in <module>
+    from flask import Flask
+  ModuleNotFoundError: No module named 'flask'
+  ```
+
+  ```
+   15517@bGZoCg-HP-PC  ~\Desktop\course_management_system  master   3.7.0 ERROR  pip3 install -r ./requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+  Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+  Collecting alembic==1.0.10 (from -r ./requirements.txt (line 1))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6e/8b/fa3bd058cccd5e9177fea4efa26bfb769228fdd3178436ad5e05830ef6ef/alembic-1.0.10.tar.gz
+  Collecting certifi==2019.3.9 (from -r ./requirements.txt (line 2))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/75/f692a584e85b7eaba0e03827b3d51f45f571c2e793dd731e598828d380aa/certifi-2019.3.9-py2.py3-none-any.whl
+  Collecting Click==7.0 (from -r ./requirements.txt (line 3))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl
+  Collecting dominate==2.3.5 (from -r ./requirements.txt (line 4))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1a/54/50ec03a4b4114e2c02d049cc26fe6ad8f0653ba5d0cd55d7c9bf9a260434/dominate-2.3.5-py2.py3-none-any.whl
+  Collecting Flask==1.0.3 (from -r ./requirements.txt (line 5))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/74/670ae9737d14114753b8c8fdf2e8bd212a05d3b361ab15b44937dfd40985/Flask-1.0.3-py2.py3-none-any.whl
+  Collecting Flask-Bootstrap==3.3.7.1 (from -r ./requirements.txt (line 6))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/88/53/958ce7c2aa26280b7fd7f3eecbf13053f1302ee2acb1db58ef32e1c23c2a/Flask-Bootstrap-3.3.7.1.tar.gz
+  Collecting Flask-Login==0.4.1 (from -r ./requirements.txt (line 7))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c1/ff/bd9a4d2d81bf0c07d9e53e8cd3d675c56553719bbefd372df69bf1b3c1e4/Flask-Login-0.4.1.tar.gz
+  Collecting Flask-Migrate==2.5.2 (from -r ./requirements.txt (line 8))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4b/22/d20a105f13c58fe590ef38ac59d5cabc1a917549ea8f90b0ca7b4e84f6be/Flask_Migrate-2.5.2-py2.py3-none-any.whl
+  Collecting Flask-Script==2.0.6 (from -r ./requirements.txt (line 9))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/00/a4/cd587b2b19f043b65bf33ceda2f6e4e6cdbd0ce18d01a52b9559781b1da6/Flask-Script-2.0.6.tar.gz
+  Collecting Flask-SQLAlchemy==2.4.0 (from -r ./requirements.txt (line 10))
+    Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/ca/582442cad71504a1514a2f053006c8bb128844133d6076a4df17117545fa/Flask_SQLAlchemy-2.4.0-py2.py3-none-any.whl
+  Collecting Flask-WTF==0.14.2 (from -r ./requirements.txt (line 11))
+    Could not find a version that satisfies the requirement Flask-WTF==0.14.2 (from -r ./requirements.txt (line 11)) (from versions: )  
+  No matching distribution found for Flask-WTF==0.14.2 (from -r ./requirements.txt (line 11))
+  You are using pip version 10.0.1, however version 21.1.2 is available.
+  You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+  ```
+
+21. [-] meanwhile locate the multi class 
+  ```css
+  .class::after, .class::after{
+    //xxxxx
+  }
+  ```
+
+22. [-] chrome can't show emoji
+
+
+23. [-] 火狐清除指定页面缓存
+    ctrl+f5 强制刷新
+    https://qastack.cn/superuser/173210/how-can-i-clear-a-single-site-from-the-cache-in-firefox
+
+
+24. [ ]hugo / go 模版中的日期格式: https://tricks.one/post/date-format-in-hugo-or-go-templates/
+
+25. [ ] WSL2 Proxy
+
+```
+netsh interface portproxy delete v4tov4 listenport="7890"
+$wslIp=(wsl -d Ubuntu -e sh -c "ip addr show eth0 | grep 'inet\b' | awk '{print `$2}' | cut -d/ -f1")
+netsh interface portproxy add v4tov4 listenport="4000" connectaddress="$wslIp" connectport="4000"
+```
+
+26. [ ] scoop install bug
+
+  ```
+  Checking hash of Clash.for.Windows.Setup.0.16.4.exe ... ok.
+  Extracting dl.7z ... done.
+  Running pre-install script...
+  Running installer script...
+  Move-Item : Access to the path 'C:\Users\15517\AppData\Roaming\clash_win' is denied.
+  At line:14 char:9
+  +         Move-Item $runtimeCache $runtimeCachePersist -Force
+  +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      + CategoryInfo          : WriteError: (C:\Users\15517\AppData\Roaming\clash_win:DirectoryInfo) [Move-Item], IOException
+      + FullyQualifiedErrorId : MoveDirectoryItemIOError,Microsoft.PowerShell.Commands.MoveItemCommand
+
+  New-Item : Cannot find path 'C:\Users\15517\scoop\persist\clash-for-windows\clash_win' because it does not exist.
+  At line:15 char:9
+  +         New-Item -Type Junction -Path $runtimeCache -Target $runtimeC ...
+  +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      + CategoryInfo          : ObjectNotFound: (C:\Users\15517\...ndows\clash_win:String) [New-Item], ItemNotFoundException
+      + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.NewItemCommand
+
+  Linking ~\scoop\apps\clash-for-windows\current => ~\scoop\apps\clash-for-windows\0.16.4
+  Creating shortcut for Clash for Windows (Clash for Windows.exe)
+  Persisting data
+  'clash-for-windows' (0.16.4) was installed successfully!
+  Notes
+  -----
+  Clash for Windows data are now saved into 'C:\Users\15517\scoop\persist\clash-for-windows' and persisted by Scoop.
+  ```
+
+
+27. - 绝对实力, 热爱, 擅长, 有意义
+    - 外界规则与环境
+    - 他人的监督
+
+28. - C:\Users\15517\Downloads>convert -background transparent "psp game.png" -define icon:auto-resize=256 "favicon.ico"
+      Invalid Parameter - transparent
+    - C:\Users\15517\Downloads>magick convert -background transparent "psp game.png" -define icon:auto-resize=256 "favicon.ico"
+    - https://stackoverflow.com/questions/3060205/error-invalid-parameter-fom-imagemagick-convert-on-windows
+    - https://stackoverflow.com/questions/3185677/converting-gifs-pngs-and-jpgs-to-ico-files-using-imagemagick
+    - ubuntu: ->  sudo apt install imagemagick
+    - convert -background transparent "psp game.png" -define icon:auto-resize=256 "favicon.ico"
+
+29. from tqdm import tqdm & import tqdm 什么区别, 前面的可以运行, 后面的不行
