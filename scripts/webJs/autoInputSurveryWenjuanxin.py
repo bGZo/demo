@@ -3,6 +3,7 @@
 # update: 211205
 # requirement.txt
     # selenium@4.1.0
+    # argparase
 
 import time
 import random
