@@ -1,0 +1,3 @@
+[submodule "projects/rss"]
+	path = projects/rss
+	url = https://github.com/bGZoCg/rss
