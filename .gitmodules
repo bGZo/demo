@@ -1,3 +1,6 @@
 [submodule "projects/rss"]
 	path = projects/rss
 	url = https://github.com/bGZoCg/rss
+[submodule "tasks/Projects"]
+	path = tasks/Projects
+	url = https://github.com/bGZoCg/Projects
