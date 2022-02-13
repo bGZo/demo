@@ -4,3 +4,6 @@
 [submodule "tasks/Projects"]
 	path = tasks/Projects
 	url = git@github.com:bGZoCg/Projects.git
+[submodule "projects/blog"]
+	path = projects/blog
+	url = git@github.com:bGZoCg/blog.git
