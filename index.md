@@ -1,4 +1,4 @@
 ## Guides
 
 - Tools
-  - [Color](/tools/colors)
+  - [Color](./tools/colors)

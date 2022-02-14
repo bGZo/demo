@@ -11,15 +11,15 @@
 
 ## Links Jmp:
 
-- 日本色 | https://nipponcolors.com
-- 中国色 | http://zhongguose.com | 山寨
-- 渐变色 | https://webgradients.com
-- 渐变色 | https://github.com/Ghosh/uiGradients | http://uigradients.com
-- 护眼色 | https://ethanschoonover.com/solarized | [archived](https://web.archive.org/web/20211107023606/https://ethanschoonover.com/solarized/)
+- 日本色 https://nipponcolors.com
+- 中国色(山寨) http://zhongguose.com
+- 渐变色 https://webgradients.com
+- 渐变色 https://github.com/Ghosh/uiGradients / http://uigradients.com
+- 护眼色 https://ethanschoonover.com/solarized
 - 色轮 https://paletton.com
 - https://www.design-seeds.com
 
 ## TODOs
 
 - [ ] Github Markdown was not supported for color rendering(via [github](https://docs.github.com/cn/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#disabling-markdown-rendering)). Yet you could use some third-party markdown web rendering tools (same with milkdown.dev):
-- https://github.com/pandao/editor.md | https://pandao.github.io/editor.md
+- https://github.com/pandao/editor.md / https://pandao.github.io/editor.md
