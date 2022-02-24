@@ -7,3 +7,6 @@
 [submodule "projects/blog"]
 	path = projects/blog
 	url = git@github.com:bGZoCg/blog.git
+[submodule "tools/dotfiles"]
+	path = tools/dotfiles
+	url = git@github.com:bGZoCg/dotfiles.git
