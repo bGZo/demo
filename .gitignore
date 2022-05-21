@@ -4,6 +4,7 @@
 projects/data/
 build/
 cfig.py
+tmp/
 # +------------------+
 # |Generic Config End|
 # +------------------+
