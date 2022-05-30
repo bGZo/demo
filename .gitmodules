@@ -1,15 +1,15 @@
 [submodule "projects/rssant-backup"]
 	path = projects/rssant-backup
-	url = git@github.com:bGZoCg/rssant-backup.git
+	url = git@github.com:bGZo/rssant-backup.git
 [submodule "tasks/Projects"]
 	path = tasks/Projects
-	url = git@github.com:bGZoCg/Projects.git
+	url = git@github.com:bGZo/Projects.git
 [submodule "projects/blog"]
 	path = projects/blog
-	url = git@github.com:bGZoCg/blog.git
+	url = git@github.com:bGZo/blog.git
 [submodule "tools/dotfiles"]
 	path = tools/dotfiles
-	url = git@github.com:bGZoCg/dotfiles.git
+	url = git@github.com:bGZo/dotfiles.git
 [submodule "projects/2022"]
 	path = projects/2022
 	url = git@github.com:bGZo/2022.git
