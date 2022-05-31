@@ -416,7 +416,7 @@ LEFT/RIGHT/ALL (OUTER/INNER) JOIN SC ON
 (Student.Sno=SC.Sno);
 -- FROM Student LEFT OUTER JOIN SC USING(Sno)
 -- See img diff with each other: 
--- ![](https://dandelionfs.oss-cn-beijing.aliyuncs.com/Visual_SQL_JOINS_orig.webp) 
+-- ![](https://.oss-cn-beijing.aliyuncs.com/Visual_SQL_JOINS_orig.webp) 
 -- and from its from: 
 -- https://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins
 

@@ -1,4 +1,4 @@
-//author:dandelionflowers
+//author:bGZo
 //update:200111
 #include<iostream>
 #include <windows.h>
