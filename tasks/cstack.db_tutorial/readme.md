@@ -99,13 +99,9 @@
       ```
     - more via: https://stackoverflow.com/questions/20036074/length-of-line-in-getline-function-c.
 
-
-
-
-
-
-
 ## P02
+
+- `.exit`: "meta-commands"
 
 
 ## P03
