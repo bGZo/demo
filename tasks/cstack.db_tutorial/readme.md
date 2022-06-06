@@ -102,6 +102,77 @@
 ## P02
 
 - `.exit`: "meta-commands"
+- `strncmp`: the “insert” keyword will be followed by data.
 
 
 ## P03
+
+- storage in memory plan
+  - Store rows in blocks of memory called pages
+  - Each page stores as many rows as it can fit
+  - Rows are serialized into a compact representation with each page
+  - Pages are only allocated as needed
+  - Keep a fixed-size array of pointers to pages
+- [浅析C语言之uint8_t / uint16_t / uint32_t /uint64_t - 知乎](https://zhuanlan.zhihu.com/p/37422763 )
+
+  - 1、这些类型的来源：这些数据类型中都带有_t, _t 表示这些数据类型是通过typedef定义的，而不是新的数据类型。也就是说，它们其实是我们已知的类型的别名。
+  - 2、使用这些类型的原因：方便代码的维护。比如，在C中没有bool型，于是在一个软件中，一个程序员使用int，一个程序员使用short，会比较混乱。最好用一个typedef来定义一个统一的bool：
+  - 在涉及到跨平台时，不同的平台会有不同的字长，所以利用预编译和typedef可以方便的维护代码。
+  - 在C99标准中定义了这些数据类型，具体定义在：`/usr/include/stdint.h` ISO C99: 7.18 Integer types
+    ```c
+    #ifndef __int8_t_defined
+    # define __int8_t_defined
+    typedef signed char             int8_t;
+    typedef short int               int16_t;
+    typedef int                     int32_t;
+        # if __WORDSIZE == 64
+            typedef long int                int64_t;
+        # else
+        __extension__
+        typedef long long int           int64_t;
+        # endif
+    #endif
+    
+    typedef unsigned char           uint8_t;
+    typedef unsigned short int      uint16_t;
+    
+    #ifndef __uint32_t_defined
+        typedef unsigned int            uint32_t;
+        # define __uint32_t_defined
+    #endif
+    
+    #if __WORDSIZE == 64
+        typedef unsigned long int       uint64_t;
+    #else
+        __extension__
+        typedef unsigned long long int  uint64_t;
+    #endif
+    ```
+    - > [When should one use the datatypes from stdint.h?](https://stackoverflow.com/questions/20077313)
+      - When the programming tasks specify the integer width especially to accommodate some file or communication protocol format.
+      - When high degree of *portability* between platforms is required over *performance*.
+    - `uint32_t` means `unsigned int 32 type`. via: https://stackoverflow.com/questions/48833976 & https://stackoverflow.com/questions/231760
+
+- Strcut, Typedef
+  ```c
+  // via: https://stackoverflow.com/questions/17720223
+  truct {
+     ...
+  } myNameStruct;  // defines myNameStruct as a variable with this struct
+                   // definition, but the struct definition cannot be re-used.
+  
+  struct Name {
+     ...
+  } myNameStruct;	 // define a struct, and declare/define a struct variable 
+  				 // at the same time:
+  
+  typedef struct {
+     ...
+  } Name_t;		 // use an untagged struct type inside a typedef:
+  
+  typedef struct Name {
+     ...
+  } Name_t;		 // begin with typedef, NewTypeName will be Name_t, 
+  				 // not a varible
+  ```
+
