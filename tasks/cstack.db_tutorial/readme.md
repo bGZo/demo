@@ -176,3 +176,16 @@
   				 // not a varible
   ```
 
+- 序列化: 把对象转化为可传输的字节序列过程称为序列化
+- 反序列化: 把字节序列还原为对象的过程称为反序列化
+
+
+## P04
+
+- `scanf` has some disadvantages.
+  - If the string it’s reading is larger than the buffer it’s reading into, it will cause a buffer overflow and start writing into unexpected places. We want to check the length of each string before we copy it into a Row structure. And to do that, we need to divide the input by spaces.
+
+## Bugs
+
+- [How to use `#pragma GCC diagnostic ignored` to ignore a warning in GCC?](https://stackoverflow.com/questions/1801081/how-to-use-pragma-gcc-diagnostic-ignored-to-ignore-a-warning-in-gcc)
+- `1410 is the max number of rows in a table` of `main_spec.rb`

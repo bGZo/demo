@@ -1,8 +1,8 @@
 GCC=gcc
 CFLAG=-c
 OFLAG=-o
-EXE=sqlite
-OBJ=sqlite.o
+EXE=db
+OBJ=db.o
 
 # InputBuffer.o
 
