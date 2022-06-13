@@ -197,3 +197,18 @@
 - To add persistence, we can simply write those blocks of memory to a file, and read them back into memory the next time the program starts up.
   - To make this easier, we’re going to make an abstraction called the pager. We ask the pager for page number x, and the pager gives us back a block of memory. It first looks in its cache. On a cache miss, it copies data from disk into memory (by reading the database file).
 
+- `off_t`:  [c - Where to find the complete definition of off_t type?](https://stackoverflow.com/questions/9073667/where-to-find-the-complete-definition-of-off-t-type )
+  - it's a standard. found [The Open Group Base Specifications Issue 7, 2018 edition](https://pubs.opengroup.org/onlinepubs/9699919799/ )
+- We assume pages are saved one after the other in the database file: Page 0 at offset 0, page 1 at offset 4096, page 2 at offset 8192, etc. If the requested page lies outside the bounds of the file, we know it should be blank, so we just allocate some memory and return it. The page will be added to the file when we flush the cache to disk later.
+
+## 06 The Cursor Abstraction
+
+- We’re going to add a `Cursor` object which represents a location in the table. Things you might want to do with cursors:
+  - Create a cursor at the beginning of the table
+  - Create a cursor at the end of the table
+  - Access the row the cursor is pointing to
+  - Advance the cursor to the next row
+- Those are the behaviors we’re going to implement now. Later, we will also want to:
+  - Delete the row pointed to by a cursor
+  - Modify the row pointed to by a cursor
+  - Search a table for a given ID, and create a cursor pointing to the row with that ID
