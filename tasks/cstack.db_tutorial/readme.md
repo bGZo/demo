@@ -180,7 +180,7 @@
 - 反序列化: 把字节序列还原为对象的过程称为反序列化
 
 
-## P04
+## P04 Our First Tests (and Bugs)
 
 - `scanf` has some disadvantages.
   - If the string it’s reading is larger than the buffer it’s reading into, it will cause a buffer overflow and start writing into unexpected places. We want to check the length of each string before we copy it into a Row structure. And to do that, we need to divide the input by spaces.
@@ -189,3 +189,11 @@
 
 - [How to use `#pragma GCC diagnostic ignored` to ignore a warning in GCC?](https://stackoverflow.com/questions/1801081/how-to-use-pragma-gcc-diagnostic-ignored-to-ignore-a-warning-in-gcc)
 - `1410 is the max number of rows in a table` of `main_spec.rb`
+
+## P05 Persistence to Disk
+
+*“Nothing in the world can take the place of persistence.” –* [Calvin Coolidge](https://en.wikiquote.org/wiki/Calvin_Coolidge)
+
+- To add persistence, we can simply write those blocks of memory to a file, and read them back into memory the next time the program starts up.
+  - To make this easier, we’re going to make an abstraction called the pager. We ask the pager for page number x, and the pager gives us back a block of memory. It first looks in its cache. On a cache miss, it copies data from disk into memory (by reading the database file).
+
