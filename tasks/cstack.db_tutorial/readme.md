@@ -201,7 +201,7 @@
   - it's a standard. found [The Open Group Base Specifications Issue 7, 2018 edition](https://pubs.opengroup.org/onlinepubs/9699919799/ )
 - We assume pages are saved one after the other in the database file: Page 0 at offset 0, page 1 at offset 4096, page 2 at offset 8192, etc. If the requested page lies outside the bounds of the file, we know it should be blank, so we just allocate some memory and return it. The page will be added to the file when we flush the cache to disk later.
 
-## 06 The Cursor Abstraction
+## P06 The Cursor Abstraction
 
 - We’re going to add a `Cursor` object which represents a location in the table. Things you might want to do with cursors:
   - Create a cursor at the beginning of the table
@@ -212,3 +212,31 @@
   - Delete the row pointed to by a cursor
   - Modify the row pointed to by a cursor
   - Search a table for a given ID, and create a cursor pointing to the row with that ID
+
+## P07 Introduction to the B-Tree
+
+### B Tree vs B+Tree
+
+|                               | B-tree         | B+ tree             |
+| :---------------------------- | :------------- | :------------------ |
+| Pronounced                    | “Bee Tree”     | “Bee Plus Tree”     |
+| Used to store                 | Indexes        | Tables              |
+| Internal nodes store keys     | Yes            | Yes                 |
+| Internal nodes store values   | Yes            | No                  |
+| Number of children per node   | Less           | More                |
+| Internal nodes vs. leaf nodes | Same structure | Different structure |
+
+###  Internal nodes vs leaf nodes
+
+| For an order-m tree… | Internal Node                 | Leaf Node           |
+| :------------------- | :---------------------------- | :------------------ |
+| Stores               | keys and pointers to children | keys and values     |
+| Number of keys       | up to m-1                     | as many as will fit |
+| Number of pointers   | number of keys + 1            | none                |
+| Number of values     | none                          | number of keys      |
+| Key purpose          | used for routing              | paired with value   |
+| Stores values?       | No                            | Yes                 |
+
+- The depth of the tree only increases when we split the root node. Every leaf node has the same depth and close to the same number of key/value pairs, so the tree remains balanced and quick to search.
+
+## P08 B-Tree Leaf Node Format
