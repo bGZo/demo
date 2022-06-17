@@ -254,7 +254,7 @@ void pager_flush(Pager* pager, uint32_t page_num, uint32_t size){
 
 void db_close(Table* table){
   Pager* pager = table->pager;
-  uint32_t num_full_pages = table->num_rows / ROWS_PRE_PAGE;
+  // uint32_t num_full_pages = table->num_rows / ROWS_PRE_PAGE;
 
   for(uint32_t i =0;i<num_full_pages;i++){
     if(pager->pages[i] == NULL){

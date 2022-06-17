@@ -240,3 +240,7 @@
 - The depth of the tree only increases when we split the root node. Every leaf node has the same depth and close to the same number of key/value pairs, so the tree remains balanced and quick to search.
 
 ## P08 B-Tree Leaf Node Format
+
+- Nodes need to store some metadata in a header at the beginning of the page. Every node will store what type of node it is, whether or not it is the root node, and a pointer to its parent (to allow finding a node’s siblings)
+
+![](https://cstack.github.io/db_tutorial/assets/images/leaf-node-format.png)
