@@ -1,4 +1,4 @@
-package builder;
+package cBuilder;
 
 /* File Name: HouseBuilder
  * Author: bGZo
