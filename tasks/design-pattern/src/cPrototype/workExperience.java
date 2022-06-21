@@ -1,4 +1,4 @@
-package cPrototypePattern;
+package cPrototype;
 
 /* File Name: workExperience
  * Author: @bGZo
