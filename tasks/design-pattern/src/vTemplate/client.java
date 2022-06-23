@@ -1,4 +1,4 @@
-package templatePattern;
+package vTemplate;
 
 /* File Name: client
  * Author: @bGZo

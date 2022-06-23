@@ -1,4 +1,4 @@
-package strategyPattern;
+package vStrategy;
 
 public class v3CashSuper {
     public  double acceptCash(double money) {

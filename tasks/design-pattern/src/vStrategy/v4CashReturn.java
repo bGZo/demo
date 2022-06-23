@@ -1,4 +1,4 @@
-package strategyPattern;
+package vStrategy;
 
 /* File Name: v3CashReturn
  * Author: @bGZo
@@ -6,11 +6,11 @@ package strategyPattern;
  * License: MIT
  * Description:
  */
-public class v3CashReturn extends v3CashSuper{
+public class v4CashReturn implements v4CashSuper{
     private  double moneyCondition = 0.0d;
     private  double moneyReturn = 0.0d;
 
-    public v3CashReturn(String moneyCondition, String moneyReturn){
+    public v4CashReturn(String moneyCondition, String moneyReturn){
         this.moneyCondition = Double.parseDouble(moneyCondition);
         this.moneyReturn = Double.parseDouble(moneyReturn);
     }

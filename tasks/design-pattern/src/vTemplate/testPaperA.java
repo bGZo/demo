@@ -1,12 +1,12 @@
-package templatePattern;
+package vTemplate;
 
-/* File Name: testPaperB
+/* File Name: testPaperA
  * Author: @bGZo
- * Created Time: 3/25/2022 09:37
+ * Created Time: 3/25/2022 09:36
  * License: MIT
  * Description:
  */
-public class testPaperB extends testPaper{
+public class testPaperA extends testPaper {
     @Override
     public String answer1() {
         return "a";
@@ -14,11 +14,11 @@ public class testPaperB extends testPaper{
 
     @Override
     public String answer2() {
-        return "b";
+        return "a";
     }
 
     @Override
     public String answer3() {
-        return "c";
+        return "a";
     }
 }

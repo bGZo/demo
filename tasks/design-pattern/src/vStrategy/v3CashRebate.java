@@ -1,4 +1,4 @@
-package strategyPattern;
+package vStrategy;
 
 /* File Name: v3CashRebate
  * Author: @bGZo
@@ -7,10 +7,10 @@ package strategyPattern;
  * Description:
  */
 
-class v4CashRebate implements v4CashSuper{
+class v3CashRebate extends v3CashSuper{
     private  double moneyRebate = 1d;
 
-    public v4CashRebate(String moneyRebate){
+    public v3CashRebate(String moneyRebate){
         this.moneyRebate = Double.parseDouble(moneyRebate);
     }
 

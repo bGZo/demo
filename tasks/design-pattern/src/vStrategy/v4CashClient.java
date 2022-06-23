@@ -1,4 +1,4 @@
-package strategyPattern;
+package vStrategy;
 
 /* File Name: v4CashClient
  * Author: @bGZo

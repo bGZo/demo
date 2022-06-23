@@ -1,4 +1,4 @@
-package strategyPattern;
+package vStrategy;
 
 /* File Name: v3CashFactory
  * Author: @bGZo

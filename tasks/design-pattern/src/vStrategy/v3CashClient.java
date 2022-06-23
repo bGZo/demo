@@ -1,4 +1,4 @@
-package strategyPattern;
+package vStrategy;
 
 public class v3CashClient {
     static double total = 0.0d;
