@@ -1,4 +1,4 @@
-package decoratorPattern;
+package sDecorator;
 
 /* File Name: finery
  * Author: @bGZo

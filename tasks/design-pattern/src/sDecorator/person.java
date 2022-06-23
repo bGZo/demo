@@ -1,4 +1,4 @@
-package decoratorPattern;
+package sDecorator;
 
 /* File Name: person
  * Author: @bGZo

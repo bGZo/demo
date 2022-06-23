@@ -1,6 +1,6 @@
 ## Contents
 
-- Create
+- Create(5)
     - Singleton
       ![image](https://user-images.githubusercontent.com/57313137/175233696-f5ac6fd0-d63e-4946-901e-b696e81bb004.png)
     - Prototype
@@ -11,7 +11,7 @@
       ![image](https://user-images.githubusercontent.com/57313137/175233928-d2df1cf6-28f9-42d0-bf35-df28b4d9ade9.png)
     - Builder
       ![image](https://user-images.githubusercontent.com/57313137/175233997-ee7c1f58-b2a5-48ab-8ec2-baf36f384ca2.png)
-- construction
+- Construction (7)
     - Facade
     - Composite
     - Decorator: 如果只有一个ConcreteComponent类而没有抽象的Component类，
@@ -20,4 +20,7 @@
       而可以把Decorator和ConcreteDecorator的责任合并成一个类
     - Adopter
     - Flyweight
+    - Proxy
+    - Bridge
+
 
