@@ -19,7 +19,9 @@ public class v4Client {
         oper = v4OperationFactory.v4createOperate(strOperate);
         oper.setNumberA(numberA);
         oper.setNumberB(numberB);
+
         double result = oper.getResult(); //NOTE: throws sync with above
+
         System.out.println("Out: " + result);
     }
 }
