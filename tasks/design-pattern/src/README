@@ -23,5 +23,8 @@
     - Proxy
     - Bridge
 - Behavior
+    - Template
+    - Iterator
+    - Mediator
 
 
