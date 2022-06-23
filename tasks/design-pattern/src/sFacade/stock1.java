@@ -1,4 +1,4 @@
-package facadePattern;
+package sFacade;
 
 /* File Name: stock1
  * Author: @bGZo

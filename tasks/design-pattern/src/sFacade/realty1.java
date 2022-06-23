@@ -1,4 +1,4 @@
-package facadePattern;
+package sFacade;
 
 /* File Name: realty1
  * Author: @bGZo

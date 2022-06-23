@@ -1,4 +1,4 @@
-package facadePattern;
+package sFacade;
 
 /* File Name: client
  * Author: @bGZo
