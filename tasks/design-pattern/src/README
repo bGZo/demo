@@ -1,6 +1,6 @@
 ## Contents
 
-- Create(c,5)
+- Create (c,5)
     - Singleton
       ![image](https://user-images.githubusercontent.com/57313137/175233696-f5ac6fd0-d63e-4946-901e-b696e81bb004.png)
     - Prototype
@@ -22,7 +22,7 @@
     - Flyweight
     - Proxy
     - Bridge
-- Behavior(v, 11)
+- Behavior (v, 11)
     - Template
     - Iterator
     - Chain Of Responsibility
@@ -34,5 +34,12 @@
     - Visitor
     - Observer
     - Interpreter
+- Principle (6, S.O.L.I.D + LoD)
+    - Single Responsibility Principle, 单一职责, 任何修改只有一个原因
+    - Open/Closed Principle, 开闭原则, 开放扩展, 关闭修改
+    - Liskov Substitution Principle, 里氏替换原则, 父子类可替换
+    - Interface Segregation Principle, 接口隔离, 细粒度化接口(灵活Up)
+    - Dependency Inversion Principle, 依赖倒置, 高层与底层数据解耦, 只依赖抽象, 不依赖实现
+    - Law of Demeter, 迪米特法则, 简单化模块间的通信, 最大程度地隐藏内部逻辑
 
 
