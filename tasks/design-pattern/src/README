@@ -22,7 +22,7 @@
     - Flyweight
     - Proxy
     - Bridge
-- Behavior(v,)
+- Behavior(v, 11)
     - Template
     - Iterator
     - Chain Of Responsibility
@@ -32,5 +32,7 @@
     - Mediator !!!
     - Command
     - Visitor
+    - Observer
+    - Interpreter
 
 
