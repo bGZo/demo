@@ -1,4 +1,4 @@
-package simpleFactory;
+package cSimpleFactory;
 
 public class v3Operation {
     public static double getResult(double numberA, double numberB, String operate){

@@ -1,6 +1,4 @@
-package proxyPattern;
-
-import javax.xml.crypto.KeySelector;
+package sProxy;
 
 /* File Name: proxy
  * Author: @bGZo

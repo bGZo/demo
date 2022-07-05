@@ -1,4 +1,4 @@
-package simpleFactory;
+package cSimpleFactory;
 
 public class v4Operation {
     private double _numberA = 0;

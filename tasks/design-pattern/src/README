@@ -41,5 +41,3 @@
     - Interface Segregation Principle, 接口隔离, 细粒度化接口(灵活Up)
     - Dependency Inversion Principle, 依赖倒置, 高层与底层数据解耦, 只依赖抽象, 不依赖实现
     - Law of Demeter, 迪米特法则, 简单化模块间的通信, 最大程度地隐藏内部逻辑
-
-

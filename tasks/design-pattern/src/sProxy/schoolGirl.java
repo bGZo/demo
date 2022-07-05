@@ -1,4 +1,4 @@
-package proxyPattern;
+package sProxy;
 
 /* File Name: schoolGirl
  * Author: @bGZo

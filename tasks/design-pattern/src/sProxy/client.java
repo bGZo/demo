@@ -1,4 +1,4 @@
-package proxyPattern;
+package sProxy;
 
 /* File Name: client
  * Author: @bGZo
