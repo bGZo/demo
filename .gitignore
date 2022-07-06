@@ -1,7 +1,6 @@
 # +----------------+
 # |Generical Config|
 # +----------------+
-projects/data/
 build/
 cfig.py
 tmp/
