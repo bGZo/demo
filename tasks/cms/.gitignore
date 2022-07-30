@@ -34,7 +34,6 @@ build/
 
 ### CMS ###
 
-.mvn/
 upload/
 src/main/resources/static/
 src/main/resources/templates/
