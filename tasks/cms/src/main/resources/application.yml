@@ -11,6 +11,10 @@ spring:
     password: 0
   main:
     allow-circular-references: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
 #    lazy-initialization: true # default: false
 
 mybatis-plus:
@@ -49,11 +53,10 @@ mybatis-plus:
 #    #配置JdbcTypeForNull, oracle数据库必须配置
 #    jdbc-type-for-null: 'null'
 
-#定义图片存储的位置
 system:
+  # 存储
   filePath: /home/bgzocg/demo/tasks/cms/upload
-#  D:\image\cms1010
-# 图片访问路径
+  # 访问
   urlPath: http://localhost:${server.port}${server.servlet.context-path}
 
 thymeleaf:

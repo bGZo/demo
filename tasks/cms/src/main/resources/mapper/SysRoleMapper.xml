@@ -13,6 +13,11 @@
         delete from sys_role_menu where sys_role_id = #{id}
     </delete>
 
+    <update id="updateRoleDelFlag" parameterType="SysRole">
+        update sys_role set del_flag="1" where sys_role.id = #{id}
+    </update>
+<!--        delete from sys_role_menu where  -->
+
     <!--批量更新角色-->
     <insert id="insertRoleMenus" parameterType="SysRole">
         insert into sys_role_menu (sys_role_id,sys_menu_id)
@@ -27,4 +32,6 @@
                  LEFT JOIN sys_role_menu srm on srm.sys_role_id = sr.id
         where sr.id = #{value}
     </select>
+
+
 </mapper>

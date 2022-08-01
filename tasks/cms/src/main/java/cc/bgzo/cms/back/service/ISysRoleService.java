@@ -8,6 +8,9 @@ import java.util.Map;
 
 public interface ISysRoleService extends IService<SysRole> {
 
+
+    void updateRoleDelFlag(SysRole sysRole);
+
     /**
      * 保存角色
      */

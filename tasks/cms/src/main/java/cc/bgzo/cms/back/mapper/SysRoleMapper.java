@@ -14,4 +14,6 @@ public interface SysRoleMapper extends BaseMapper<SysRole> {
 //
 //    //批量插入角色菜单
     void insertRoleMenus(SysRole sysRole);
+
+    void updateRoleDelFlag(SysRole sysRole);
 }

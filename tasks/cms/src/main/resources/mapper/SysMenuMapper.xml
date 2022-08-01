@@ -10,7 +10,8 @@
                  JOIN sys_role_menu rm ON rm.sys_menu_id = a.id
                  JOIN sys_role r ON r.id = rm.sys_role_id
                  JOIN sys_user_role ur ON ur.sys_role_id = r.id
-                 JOIN sys_user u ON u.id = ur.sys_user_id AND u.username = #{username} order by id asc
+                 JOIN sys_user u ON u.id = ur.sys_user_id AND u.username = #{username} AND a.del_flag="0"
+        order by id asc
     </select>
 
 </mapper>

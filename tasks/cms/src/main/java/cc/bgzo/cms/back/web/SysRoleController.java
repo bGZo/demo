@@ -1,7 +1,9 @@
 package cc.bgzo.cms.back.web;
 
 import cc.bgzo.cms.back.entity.SysRole;
+import cc.bgzo.cms.back.entity.SysUser;
 import cc.bgzo.cms.back.service.ISysRoleService;
+import cc.bgzo.cms.vo.ResponseResult;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -76,5 +79,22 @@ public class SysRoleController {
     public List<Map<String, Object>> getRoleMenuTree(SysRole role) {
         List<Map<String, Object>> list = sysRoleService.getRoleMenuTree(role);
         return list;
+    }
+
+    /**
+     * 删除角色
+     */
+    @ResponseBody
+    @RequestMapping("/deleteRole")
+    public ResponseResult deleteRole(SysRole role) {
+
+        sysRoleService.updateRoleDelFlag(role);
+        ResponseResult result = null;
+
+        if (role.getDelFlag().equals("1")) {
+            result = new ResponseResult("200", "账户已删除");
+        }
+
+        return result;
     }
 }

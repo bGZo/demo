@@ -29,6 +29,11 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     List<SysMenu> roleMenu = null;
 
     @Override
+    public void updateRoleDelFlag(SysRole sysRole) {
+        sysRoleMapper.updateRoleDelFlag(sysRole);
+    }
+
+    @Override
     public void saveRole(SysRole sysRole, int[] roleMenus) {
         if (sysRole.getId() != null) {
             sysRoleMapper.updateById(sysRole);

@@ -1,9 +1,11 @@
 package cc.bgzo.cms.back.web;
 
 import cc.bgzo.cms.back.entity.SysMenu;
+import cc.bgzo.cms.back.service.IFilmService;
 import cc.bgzo.cms.back.service.ISysMenuService;
 import cc.bgzo.cms.back.service.ISysRoleService;
 import cc.bgzo.cms.back.service.ISysUserService;
+import cc.bgzo.cms.back.service.impl.FilmServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,7 +25,8 @@ public class SysIndexController {
     private ISysUserService sysUserService;
     @Autowired
     private ISysRoleService sysRoleService;
-
+    @Autowired
+    private IFilmService iFilmService;
 
     /**
      * 读取当前登录成功用户的角色，并根据角色加载菜单
@@ -55,15 +58,17 @@ public class SysIndexController {
     public String console(Model model) {
 
         /**
-         * 用户数, 角色数, 菜单数
+         * 用户数, 角色数, 菜单数, 电影数
          */
         Integer userCount = sysUserService.count();
         Integer roleCount = sysRoleService.count();
         Integer menuCount = sysMenuService.count();
+        Integer filmCount = iFilmService.count();
 
-        model.addAttribute("userCount",userCount);
-         model.addAttribute("roleCount",roleCount);
-        model.addAttribute("menuCount",menuCount);
+        model.addAttribute("userCount", userCount);
+        model.addAttribute("roleCount", roleCount);
+        model.addAttribute("menuCount", menuCount);
+        model.addAttribute("filmCount", filmCount);
 
         return "sys/console";
     }
