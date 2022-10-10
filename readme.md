@@ -1,5 +1,3 @@
-# Demo Snippets Lib
-
 ![](https://img.shields.io/github/repo-size/bgzocg/demo-hell)
 
 ```diff
