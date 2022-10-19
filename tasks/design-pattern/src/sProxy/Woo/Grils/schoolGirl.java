@@ -1,4 +1,4 @@
-package sProxy;
+package sProxy.Woo.Grils;
 
 /* File Name: schoolGirl
  * Author: @bGZo
@@ -10,11 +10,8 @@ public class schoolGirl {
     private String name;
 
     public schoolGirl(){this.name="anony";}
-    public schoolGirl(String name){this.name = name;}
 
-//    public schoolGirl(schoolGirl mm) {
-//        this.name=mm.name;
-//    }
+    public schoolGirl(String name){this.name = name;}
 
     public String getName() {
         return name;
